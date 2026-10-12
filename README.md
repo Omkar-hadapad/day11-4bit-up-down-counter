@@ -729,7 +729,7 @@ All numeric results in this README are based on the supplied NC-Sim and Genus re
 Electronics and Communication Engineering  
 Digital VLSI • Verilog HDL • RTL Design • Functional Verification • Synthesis and PPA Analysis
 
-## 26. Next Project --- Day 11
+## 26. Next Project --- Day 12
 
 ### day12---4bit-up-down-counter
 
