@@ -731,7 +731,7 @@ Digital VLSI • Verilog HDL • RTL Design • Functional Verification • Synt
 
 ## 26. Next Project --- Day 12
 
-### day12---4bit-up-down-counter
+### day12-ring-johnson-counter
 
 The next project extends counter design by adding a direction control.
 
