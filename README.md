@@ -1,5 +1,10 @@
 # Day 11 — 4-Bit Up/Down Counter: Structural vs. RTL Implementations
 
+![Verilog](https://img.shields.io/badge/HDL-Verilog-blue)
+![Domain](https://img.shields.io/badge/Domain-Digital%20VLSI-orange) 
+![Design](https://img.shields.io/badge/Design-4--bit%20Adder%2FSubtractor-green)
+![Tool](https://img.shields.io/badge/Synthesis-Cadence%20Genus-red)
+
 <p align="center">
   <b>Digital VLSI • Verilog HDL • RTL Design • Functional Verification • Cadence Genus • PPA Analysis</b>
 </p>
@@ -723,3 +728,27 @@ All numeric results in this README are based on the supplied NC-Sim and Genus re
 **Omkar Kalmesh Hadapad**  
 Electronics and Communication Engineering  
 Digital VLSI • Verilog HDL • RTL Design • Functional Verification • Synthesis and PPA Analysis
+
+## 26. Next Project --- Day 11
+
+### day12---4bit-up-down-counter
+
+The next project extends counter design by adding a direction control.
+
+``` text
+Direction control
+       ↓
+Up-count / Down-count next-state logic
+       ↓
+4-bit register
+       ↓
+Reset behavior
+       ↓
+Verification of rollover and underflow
+       ↓
+Synthesis and PPA analysis
+```
+
+The Day-12 focus is to understand up-counting, down-counting, rollover,
+underflow, reset behavior, and verification of both operating
+directions.
