@@ -1,0 +1,232 @@
+ncsim> 
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm day11_tb.A day11_tb.AND_Y day11_tb.B day11_tb.C_ASYNC_\
+RTL day11_tb.C_ASYNC_STRUCT day11_tb.C_SYNC_RTL day11_tb.C_SYNC_STRUCT day11_tb.\
+D day11_tb.DEC_A day11_tb.DEC_COUT day11_tb.DEC_Y day11_tb.FA_A day11_tb.FA_B da\
+y11_tb.FA_COUT day11_tb.FA_Cin day11_tb.FA_SUM day11_tb.HA_A day11_tb.HA_B day11\
+_tb.HA_CARRY day11_tb.HA_SUM day11_tb.I0 day11_tb.I1 day11_tb.INC_A day11_tb.INC\
+_COUT day11_tb.INC_Y day11_tb.MUX_Y day11_tb.NEXT_Q day11_tb.NEXT_UP_DOWN day11_\
+tb.NEXT_VALUE day11_tb.NOT_Y day11_tb.OR_Y day11_tb.Q_ASYNC day11_tb.Q_SYNC day1\
+1_tb.RCA_A day11_tb.RCA_B day11_tb.RCA_COUT day11_tb.RCA_Cin day11_tb.RCA_SUM da\
+y11_tb.REG_ASYNC_Q day11_tb.REG_D day11_tb.REG_SYNC_Q day11_tb.S day11_tb.XOR_Y \
+day11_tb.clk day11_tb.errors day11_tb.reset day11_tb.up_down
+Created probe 1
+ncsim> run
+
+==============================================
+LEVEL 1 : BASIC GATE VERIFICATION
+==============================================
+PASS :                          NOT 0 | Value=1
+PASS :                         AND 00 | Value=0
+PASS :                          OR 00 | Value=0
+PASS :                         XOR 00 | Value=0
+PASS :                          NOT 0 | Value=1
+PASS :                         AND 01 | Value=0
+PASS :                          OR 01 | Value=1
+PASS :                         XOR 01 | Value=1
+PASS :                          NOT 1 | Value=0
+PASS :                         AND 10 | Value=0
+PASS :                          OR 10 | Value=1
+PASS :                         XOR 10 | Value=1
+PASS :                          NOT 1 | Value=0
+PASS :                         AND 11 | Value=1
+PASS :                          OR 11 | Value=1
+PASS :                         XOR 11 | Value=0
+
+==============================================
+LEVEL 2 : MUX VERIFICATION
+==============================================
+PASS :                        MUX S=0 | Value=0
+PASS :                        MUX S=1 | Value=1
+
+==============================================
+LEVEL 3 : HALF ADDER VERIFICATION
+==============================================
+PASS :                      HA SUM 00 | Value=0
+PASS :                    HA CARRY 00 | Value=0
+PASS :                      HA SUM 01 | Value=1
+PASS :                    HA CARRY 01 | Value=0
+PASS :                      HA SUM 10 | Value=1
+PASS :                    HA CARRY 10 | Value=0
+PASS :                      HA SUM 11 | Value=0
+PASS :                    HA CARRY 11 | Value=1
+
+==============================================
+LEVEL 4 : FULL ADDER VERIFICATION
+==============================================
+PASS :                     FA 000 SUM | Value=0
+PASS :                    FA 000 COUT | Value=0
+PASS :                     FA 001 SUM | Value=1
+PASS :                    FA 001 COUT | Value=0
+PASS :                     FA 011 SUM | Value=0
+PASS :                    FA 011 COUT | Value=1
+PASS :                     FA 111 SUM | Value=1
+PASS :                    FA 111 COUT | Value=1
+
+==============================================
+LEVEL 5 : 4-BIT RCA VERIFICATION
+==============================================
+PASS :                        RCA 3+2 | Value=0101
+PASS :                       RCA COUT | Value=0
+PASS :                       RCA 15+1 | Value=0000
+PASS :                       RCA COUT | Value=1
+
+==============================================
+LEVEL 6 : INCREMENTER VERIFICATION
+==============================================
+PASS :                          INC 0 | Value=0001
+PASS :                          INC 5 | Value=0110
+PASS :                         INC 15 | Value=0000
+PASS :                   INC overflow | Value=1
+
+==============================================
+LEVEL 7 : DECREMENTER VERIFICATION
+==============================================
+PASS :                          DEC 5 | Value=0100
+PASS :                          DEC 1 | Value=0000
+PASS :                          DEC 0 | Value=1111
+
+==============================================
+LEVEL 8 : UP/DOWN NEXT-STATE VERIFICATION
+==============================================
+PASS :                      NEXT UP 5 | Value=0110
+PASS :                    NEXT DOWN 5 | Value=0100
+PASS :                    UP rollover | Value=0000
+PASS :                 DOWN underflow | Value=1111
+
+==============================================
+LEVEL 9/10 : DFF + REGISTER VERIFICATION
+==============================================
+PASS :                ASYNC DFF reset | Value=0
+PASS :           ASYNC register reset | Value=0000
+PASS :                  SYNC DFF load | Value=1
+PASS :             SYNC register load | Value=1010
+PASS :                 ASYNC DFF load | Value=1
+PASS :            ASYNC register load | Value=1010
+
+==============================================
+COUNTER : RESET VERIFICATION
+==============================================
+PASS :            Counter async reset | Value=0000
+PASS :        Counter async RTL reset | Value=0000
+PASS :             Counter sync reset | Value=0000
+PASS :         Counter sync RTL reset | Value=0000
+
+==============================================
+COUNTER : COUNT UP VERIFICATION
+==============================================
+PASS :             UP test reset SYNC | Value=0000
+PASS :            UP test reset ASYNC | Value=0000
+PASS :             SYNC structural UP | Value=0001
+PASS :                    SYNC RTL UP | Value=0001
+PASS :            ASYNC structural UP | Value=0001
+PASS :                   ASYNC RTL UP | Value=0001
+PASS :             SYNC structural UP | Value=0010
+PASS :                    SYNC RTL UP | Value=0010
+PASS :            ASYNC structural UP | Value=0010
+PASS :                   ASYNC RTL UP | Value=0010
+PASS :             SYNC structural UP | Value=0011
+PASS :                    SYNC RTL UP | Value=0011
+PASS :            ASYNC structural UP | Value=0011
+PASS :                   ASYNC RTL UP | Value=0011
+PASS :             SYNC structural UP | Value=0100
+PASS :                    SYNC RTL UP | Value=0100
+PASS :            ASYNC structural UP | Value=0100
+PASS :                   ASYNC RTL UP | Value=0100
+PASS :             SYNC structural UP | Value=0101
+PASS :                    SYNC RTL UP | Value=0101
+PASS :            ASYNC structural UP | Value=0101
+PASS :                   ASYNC RTL UP | Value=0101
+PASS :             SYNC structural UP | Value=0110
+PASS :                    SYNC RTL UP | Value=0110
+PASS :            ASYNC structural UP | Value=0110
+PASS :                   ASYNC RTL UP | Value=0110
+PASS :             SYNC structural UP | Value=0111
+PASS :                    SYNC RTL UP | Value=0111
+PASS :            ASYNC structural UP | Value=0111
+PASS :                   ASYNC RTL UP | Value=0111
+PASS :             SYNC structural UP | Value=1000
+PASS :                    SYNC RTL UP | Value=1000
+PASS :            ASYNC structural UP | Value=1000
+PASS :                   ASYNC RTL UP | Value=1000
+
+==============================================
+COUNTER : COUNT DOWN VERIFICATION
+==============================================
+PASS :           DOWN test reset SYNC | Value=0000
+PASS :          DOWN test reset ASYNC | Value=0000
+PASS :           SYNC structural DOWN | Value=1111
+PASS :                  SYNC RTL DOWN | Value=1111
+PASS :          ASYNC structural DOWN | Value=1111
+PASS :                 ASYNC RTL DOWN | Value=1111
+PASS :           SYNC structural DOWN | Value=1110
+PASS :                  SYNC RTL DOWN | Value=1110
+PASS :          ASYNC structural DOWN | Value=1110
+PASS :                 ASYNC RTL DOWN | Value=1110
+PASS :           SYNC structural DOWN | Value=1101
+PASS :                  SYNC RTL DOWN | Value=1101
+PASS :          ASYNC structural DOWN | Value=1101
+PASS :                 ASYNC RTL DOWN | Value=1101
+PASS :           SYNC structural DOWN | Value=1100
+PASS :                  SYNC RTL DOWN | Value=1100
+PASS :          ASYNC structural DOWN | Value=1100
+PASS :                 ASYNC RTL DOWN | Value=1100
+PASS :           SYNC structural DOWN | Value=1011
+PASS :                  SYNC RTL DOWN | Value=1011
+PASS :          ASYNC structural DOWN | Value=1011
+PASS :                 ASYNC RTL DOWN | Value=1011
+PASS :           SYNC structural DOWN | Value=1010
+PASS :                  SYNC RTL DOWN | Value=1010
+PASS :          ASYNC structural DOWN | Value=1010
+PASS :                 ASYNC RTL DOWN | Value=1010
+PASS :           SYNC structural DOWN | Value=1001
+PASS :                  SYNC RTL DOWN | Value=1001
+PASS :          ASYNC structural DOWN | Value=1001
+PASS :                 ASYNC RTL DOWN | Value=1001
+PASS :           SYNC structural DOWN | Value=1000
+PASS :                  SYNC RTL DOWN | Value=1000
+PASS :          ASYNC structural DOWN | Value=1000
+PASS :                 ASYNC RTL DOWN | Value=1000
+
+==============================================
+COUNTER : ROLLOVER VERIFICATION
+==============================================
+PASS :            Rollover reset SYNC | Value=0000
+PASS :           Rollover reset ASYNC | Value=0000
+PASS :             Before UP rollover | Value=1111
+PASS :         Before UP rollover RTL | Value=1111
+PASS :       Before UP rollover async | Value=1111
+PASS :   Before UP rollover async RTL | Value=1111
+PASS :                    UP rollover | Value=0000
+PASS :                UP rollover RTL | Value=0000
+PASS :              UP rollover async | Value=0000
+PASS :          UP rollover async RTL | Value=0000
+
+==============================================
+COUNTER : UNDERFLOW VERIFICATION
+==============================================
+PASS :           Underflow reset SYNC | Value=0000
+PASS :            Underflow reset RTL | Value=0000
+PASS :          Underflow reset ASYNC | Value=0000
+PASS :      Underflow reset async RTL | Value=0000
+PASS :          Before DOWN underflow | Value=0000
+PASS :      Before DOWN underflow RTL | Value=0000
+PASS :                 DOWN underflow | Value=1111
+PASS :             DOWN underflow RTL | Value=1111
+PASS :           DOWN underflow async | Value=1111
+PASS :       DOWN underflow async RTL | Value=1111
+
+==============================================
+STRUCTURAL VS RTL COMPARISON
+==============================================
+PASS : Sync Structural == Sync RTL
+PASS : Async Structural == Async RTL
+
+==================================================
+ALL DAY 11 TESTS PASSED
+NO VERIFICATION ERRORS
+==================================================
+Simulation complete via $finish(1) at time 416 NS + 0
+./day11_tb.v:1168         $finish;
+ncsim> 
